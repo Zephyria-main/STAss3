@@ -2,7 +2,7 @@
 
 **Project Title:** Macroinvertebrate Image Analysis System  
 **Unit:** Software Technology 1 (4483/8995) — Assignment 3  
-**Group Members:** [Member 1 Name] · [Member 2 Name] · [Member 3 Name]
+**Group Members:** Kes Jayaweera · [Member 2 Name] · [Member 3 Name]
 
 ---
 
