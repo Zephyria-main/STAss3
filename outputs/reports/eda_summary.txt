@@ -1,0 +1,14 @@
+==================================================
+  EDA SUMMARY — Macroinvertebrate Dataset
+==================================================
+  total_images                        2665
+  total_classes                       17
+  mean_width_px                       599.3
+  mean_height_px                      390.0
+  min_width_px                        274
+  max_width_px                        600
+  most_common_class                   Gammarus sp
+  most_common_class_count             987
+  least_common_class                  Leptophlebiidae sp
+  least_common_class_count            9
+==================================================
