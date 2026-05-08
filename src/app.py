@@ -6,7 +6,7 @@
 import threading
 import tkinter as tk
 from pathlib import Path
-from tkinter import filedialog, messagebox, scrolledtext, ttk
+from tkinter import filedialog, messagebox, ttk
 
 from PIL import Image, ImageTk
 
@@ -145,8 +145,13 @@ class MacroApp(tk.Tk):
 
     def _build_right_panel(self, parent: tk.Frame) -> None:
         """Build the right panel with image preview and output log."""
+        parent.grid_rowconfigure(0, weight=3)
+        parent.grid_rowconfigure(1, weight=0)
+        parent.grid_rowconfigure(2, weight=5)
+        parent.grid_columnconfigure(0, weight=1)
+
         # --- Image preview area ---
-        preview_frame = tk.LabelFrame(
+        self.preview_frame = tk.LabelFrame(
             parent,
             text=" Image Preview ",
             font=("Helvetica", 10),
@@ -154,17 +159,18 @@ class MacroApp(tk.Tk):
             bg="#1e1e2e",
             pady=5,
         )
-        preview_frame.pack(fill="x", pady=(0, 8))
+        self.preview_frame.grid(row=0, column=0, sticky="nsew", pady=(0, 8))
+        self.preview_frame.grid_columnconfigure(0, weight=1)
+        self.preview_frame.grid_rowconfigure(0, weight=1)
 
         self.image_label = tk.Label(
-            preview_frame,
+            self.preview_frame,
             text="No image selected.\nUse 'Choose Image' to load one.",
             font=("Helvetica", 10),
             fg="#6c7086",
             bg="#1e1e2e",
-            height=12,
         )
-        self.image_label.pack(pady=5)
+        self.image_label.grid(row=0, column=0, sticky="nsew", padx=8, pady=8)
 
         # --- Prediction result display ---
         self.result_var = tk.StringVar(value="")
@@ -175,7 +181,7 @@ class MacroApp(tk.Tk):
             fg="#a6e3a1",
             bg="#1e1e2e",
         )
-        self.result_label.pack()
+        self.result_label.grid(row=1, column=0, sticky="ew")
 
         # --- Output log ---
         log_frame = tk.LabelFrame(
@@ -185,9 +191,12 @@ class MacroApp(tk.Tk):
             fg="#cba6f7",
             bg="#1e1e2e",
         )
-        log_frame.pack(fill="both", expand=True)
+        log_frame.grid(row=2, column=0, sticky="nsew")
 
-        self.log_box = scrolledtext.ScrolledText(
+        log_frame.grid_rowconfigure(0, weight=1)
+        log_frame.grid_columnconfigure(0, weight=1)
+
+        self.log_box = tk.Text(
             log_frame,
             font=("Courier", 9),
             bg="#181825",
@@ -197,7 +206,11 @@ class MacroApp(tk.Tk):
             wrap="word",
             state="disabled",
         )
-        self.log_box.pack(fill="both", expand=True, padx=5, pady=5)
+        log_scrollbar = ttk.Scrollbar(log_frame, orient="vertical", command=self.log_box.yview)
+        self.log_box.configure(yscrollcommand=log_scrollbar.set)
+
+        self.log_box.grid(row=0, column=0, sticky="nsew", padx=(5, 0), pady=5)
+        log_scrollbar.grid(row=0, column=1, sticky="ns", padx=(0, 5), pady=5)
 
     # ------------------------------------------------------------------
     # Logging helpers
@@ -307,8 +320,11 @@ class MacroApp(tk.Tk):
         # I load and display a thumbnail so the user can confirm they
         # chose the right file before running prediction.
         try:
+            self.update_idletasks()
             image = Image.open(file_path)
-            image.thumbnail((300, 280))
+            max_w = max(200, int(self.preview_frame.winfo_width()) - 24)
+            max_h = max(200, int(self.preview_frame.winfo_height()) - 24)
+            image.thumbnail((max_w, max_h))
             photo = ImageTk.PhotoImage(image)
             self.image_label.configure(image=photo, text="")
             self.image_label.image = photo  # I keep a reference to stop GC
