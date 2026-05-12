@@ -1,3 +1,9 @@
+#*******************************
+#Author: u323115
+#Assessment 3 
+#Programming: u3231515
+#*******************************
+#
 # config.py
 # I keep all paths and shared constants here so nothing is hard-coded
 # across the project. If we move the dataset or change the image size,

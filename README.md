@@ -1,17 +1,17 @@
-# Macroinvertebrate Image Analysis System
+Macroinvertebrate Image Analysis System
 
-**Unit:** Software Technology 1 (4483/8995) — Assignment 3  
-**Dataset:** [Kaggle Stream Macroinvertebrates](https://www.kaggle.com/datasets/kennethtm/stream-macroinvertebrates)
+Unit: Software Technology 1 (4483) — Assignment 3  
+Dataset: https://www.kaggle.com/datasets/kennethtm/stream-macroinvertebrates
 
 ---
 
-## Project Goal
+Project Goal
 
 This application analyses a macroinvertebrate image dataset through three stages: exploratory data analysis (Stage 1), image classification (Stage 2), and an interactive deployment interface (Stage 3). The goal is to demonstrate object-oriented software design using Python packages including Pandas, NumPy, OpenCV, Matplotlib, Seaborn, Scikit-learn, and Tkinter.
 
 ---
 
-## Main Features
+Main Features
 
 - Dataset indexing — scans the image folder and builds a structured table
 - Class distribution analysis — bar chart of images per class
@@ -26,7 +26,7 @@ This application analyses a macroinvertebrate image dataset through three stages
 
 ---
 
-## Installation
+Installation
 
 ```bash
 # 1. Clone the repository
@@ -44,34 +44,37 @@ pip install -r requirements.txt
 
 ---
 
-## Dataset Setup
+Dataset Setup
 
 1. Download the dataset from Kaggle: https://www.kaggle.com/datasets/kennethtm/stream-macroinvertebrates
-2. Extract the contents into `data/raw/`
-3. The expected structure is: `data/raw/<ClassName>/<image>.jpg`
+2. Extract the contents into data/raw/
+3. The expected structure is: data/raw/<ClassName>/<image>.jpg
 
 ---
 
-## How to Run
+How to Run
 
-### Full non-interactive pipeline (Stage 1 + Stage 2)
+Full non-interactive pipeline (Stage 1 + Stage 2)
+
 ```bash
 python main.py
 ```
 
-### Interactive console menu (all stages)
+Interactive console menu (all stages)
+
 ```bash
 python -m src.console_app
 ```
 
-### Tkinter GUI (all stages)
+Tkinter GUI (all stages)
+
 ```bash
 python -m src.app
 ```
 
 ---
 
-## Folder Structure
+Folder Structure
 
 ```
 macro_project/
@@ -104,31 +107,31 @@ macro_project/
 
 ---
 
-## Class Overview
+Class Overview
 
 | Class | Responsibility |
 |---|---|
-| `DatasetIndexer` | Scans dataset folders and builds the image index DataFrame |
-| `EDAService` | Generates charts, sample grids, and summary statistics |
-| `ImagePreprocessor` | Converts images to normalised, flattened feature vectors |
-| `ClassifierService` | Trains, evaluates, saves, and loads the prediction model |
-| `WorkflowService` | Coordinates all services; called by both interface layers |
-| `ConsoleApp` | Menu-driven console interface for all stages |
-| `MacroApp` | Tkinter GUI interface for all stages |
+| DatasetIndexer | Scans dataset folders and builds the image index DataFrame |
+| EDAService | Generates charts, sample grids, and summary statistics |
+| ImagePreprocessor | Converts images to normalised, flattened feature vectors |
+| ClassifierService | Trains, evaluates, saves, and loads the prediction model |
+| WorkflowService | Coordinates all services; called by both interface layers |
+| ConsoleApp | Menu-driven console interface for all stages |
+| MacroApp | Tkinter GUI interface for all stages |
 
 ---
 
-## Packages Used
+Packages Used
 
 | Package | Purpose |
 |---|---|
-| `pathlib` | Clean, readable file and path handling |
-| `pandas` | Stores the image index as a structured DataFrame |
-| `numpy` | Numerical arrays for image features |
-| `opencv-python` | Reads, resizes, and converts images |
-| `matplotlib` | Chart generation for EDA and model evaluation |
-| `seaborn` | Styled statistical charts (count plots, heatmaps) |
-| `scikit-learn` | Train/test split, RandomForestClassifier, metrics |
-| `joblib` | Save and load the trained model |
-| `Pillow` | Image preview in the Tkinter GUI |
-| `tkinter` | Desktop GUI for Stage 3 deployment |
+| pathlib | Clean, readable file and path handling |
+| pandas | Stores the image index as a structured DataFrame |
+| numpy | Numerical arrays for image features |
+| opencv-python | Reads, resizes, and converts images |
+| matplotlib | Chart generation for EDA and model evaluation |
+| seaborn | Styled statistical charts (count plots, heatmaps) |
+| scikit-learn | Train/test split, RandomForestClassifier, metrics |
+| joblib | Save and load the trained model |
+| Pillow | Image preview in the Tkinter GUI |
+| tkinter | Desktop GUI for Stage 3 deployment |

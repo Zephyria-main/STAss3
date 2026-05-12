@@ -1,3 +1,9 @@
+#*******************************
+#Author: u323115
+#Assessment 3 
+#Programming: u3231515
+#*******************************
+#
 # src/services/eda_service.py
 # I put all the chart-generation logic inside this class so Stage 1 is
 # completely self-contained. The WorkflowService just calls these methods

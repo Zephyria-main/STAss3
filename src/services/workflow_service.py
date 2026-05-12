@@ -1,3 +1,9 @@
+#*******************************
+#Author: u323115
+#Assessment 3 
+#Programming: u3231515
+#*******************************
+#
 # src/services/workflow_service.py
 # I created WorkflowService as the single coordinator for the whole project.
 # Both the console app and the GUI app call this service instead of importing

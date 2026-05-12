@@ -1,7 +1,12 @@
+#*******************************
+#Author: u323115
+#Assessment 3 
+#Programming: u3231515
+#*******************************
+#
 # main.py (project root)
-# I keep this entry point at the project root so it is the first file
-# a marker or tutor sees when they open the submission. It runs the full
-# non-interactive pipeline: index → EDA → train → report.
+# I keep this entry point at the project root so
+# a marker or tutor sees first when they open the submission. 
 #
 # Usage:
 #   python main.py               — runs the full Stage 1 + Stage 2 pipeline

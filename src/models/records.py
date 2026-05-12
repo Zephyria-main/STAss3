@@ -1,3 +1,9 @@
+#*******************************
+#Author: u323115
+#Assessment 3 
+#Programming: u3231515
+#*******************************
+#
 # src/models/records.py
 # I define the ImageRecord dataclass here to represent a single indexed image.
 # Using a dataclass gives me a clean, typed structure without writing boilerplate

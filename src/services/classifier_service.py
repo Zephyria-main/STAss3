@@ -1,3 +1,9 @@
+#*******************************
+#Author: u323115
+#Assessment 3 
+#Programming: u3231515
+#*******************************
+#
 # src/services/classifier_service.py
 # I put all model-related logic here so the interface and workflow layers
 # never need to import scikit-learn directly. If I ever swap the classifier

@@ -1,3 +1,9 @@
+#*******************************
+#Author: u323115
+#Assessment 3 
+#Programming: u3231515
+#*******************************
+#
 # src/services/dataset_indexer.py
 # I wrote this class to handle all the file-scanning logic in one place.
 # The rest of the application just calls build_dataframe() and gets a

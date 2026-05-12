@@ -1,3 +1,9 @@
+#*******************************
+#Author: u323115
+#Assessment 3 
+#Programming: u3231515
+#*******************************
+#
 # src/services/image_preprocessor.py
 # I keep all image-to-feature conversion logic inside this class so the
 # ClassifierService never has to know anything about pixels, resizing, or

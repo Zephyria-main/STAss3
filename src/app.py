@@ -1,3 +1,9 @@
+#*******************************
+#Author: u323115
+#Assessment 3 
+#Programming: u3231515
+#*******************************
+#
 # src/app.py
 # I built the Tkinter GUI as an alternative Stage 3 deployment option.
 # The design is intentionally simple so it is easy to explain during the
