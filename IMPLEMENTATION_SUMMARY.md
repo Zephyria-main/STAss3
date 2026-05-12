@@ -79,15 +79,22 @@ I tested the application manually across ten scenarios documented in MANUAL_TEST
 
 8. Reused or Adapted Code
 
-The following code was adapted from the Assignment 3 Full Guidance document:
+Per unit instructions: reused or adapted tutorial/lab or guidance code is acknowledged in source comments (module-level blocks cross-reference Step numbers), summarised here, and each entry below states how the code was modified, extended, or integrated into this submission.
 
-- The DatasetIndexer.build_dataframe() method is adapted from the example in Step 4 of the guidance document. I extended it with a progress counter, better error messages, and a save/load method pair.
-- The ImagePreprocessor.transform() method follows the same grayscale + resize + normalise + flatten pattern shown in Step 6. I extended it with a transform_batch() convenience method.
-- The ClassifierService structure and RandomForestClassifier configuration is based on Step 7. I extended it with balanced class weights, a predict() method, and separate methods for saving the report and confusion matrix.
-- The MacroApp (Tkinter GUI) base structure is adapted from Step 9. I extended it with a dark theme, threaded task execution, a scrolled output log, a progress bar, and a status bar.
-- The ConsoleApp menu structure is adapted from the Step 9 console example. I extended it with option 5 (file listing) and comprehensive error handling on all options.
+Primary written source: Assignment 3 Full Guidance and Coding Examples (Software Technology 1, 4483/8995). Weekly lab notebooks and practical examples (OpenCV, sklearn, Tkinter patterns) informed API usage consistent with that guidance.
 
-Full citations, URLs, and licence notes are in CODE_SOURCES_AND_LICENSES.md. All adaptations are acknowledged in the relevant source file comments.
+- config.py — Based on Step 2 (path constants and IMAGE_SIZE). Extended with PROCESSED_DATA_DIR, REPORT_OUTPUT_DIR, MODEL_FILE_NAME, and RANDOM_SEED; paths aligned to outputs/eda, outputs/models, outputs/reports.
+- ImageRecord (records.py) — Based on Step 3 dataclass. Integrated as the typed row concept; file_path uses pathlib.Path for clarity.
+- DatasetIndexer.build_dataframe() — Adapted from Step 4. Extended with skip warnings for corrupt files, empty-table guard, scan summary printout, and save_index()/load_index() CSV helpers for repeat runs without rescanning.
+- EDAService — Adapted from Step 5 (class chart, size histograms, summary) plus the guidance sample-grid pattern. Extended with styled countplot and bar annotations, KDE on size plots, channel and aspect-ratio charts, richer summary dict, save_summary_text(), and run_all().
+- ImagePreprocessor.transform() — Based on Step 6 pipeline. Extended with clear errors on failed reads, config-driven IMAGE_SIZE, and transform_batch() with skip logging.
+- ClassifierService — Adapted from Steps 7–8 (training loop, metrics, joblib save, report and confusion matrix outputs). Integrated class_weight="balanced", stratified split with explicit labels for the matrix, prepare_features skip behaviour, predict() returning confidence for Stage 3, and report files under outputs/reports.
+- WorkflowService — Adapted from Step 10 coordinator pattern. Integrated cached dataframe, generate_eda via EDAService.run_all(), train_model wiring report and matrix saves, predict_image using ClassifierService.predict(), shared use by main.py, console_app, and app.
+- main.py — Based on Step 10 thin entry point. Extended by placing the batch runner at the repository root as main.py per submission expectations.
+- MacroApp (app.py) — Adapted from Step 9 Tkinter example (dialogs, PIL preview, prediction). Integrated WorkflowService for all stages; added threading, UI layout, logging, and status feedback.
+- ConsoleApp — Adapted from Step 9 menu loop. Integrated six options including viewing saved outputs, error handling, and exclusive delegation to WorkflowService.
+
+Full citations, URLs, and licence notes are in CODE_SOURCES_AND_LICENSES.md. Inline acknowledgements appear under “Unit tutorial / guidance” in each listed module.
 
 ---
 

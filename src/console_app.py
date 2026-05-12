@@ -8,6 +8,14 @@
 # I designed the console app to be the primary Stage 3 deployment option.
 # It wraps WorkflowService in a clean menu loop so every option is reachable
 # from one place and the program always returns to the main menu cleanly.
+#
+# Unit tutorial / guidance — acknowledgement (Step 9: menu-driven console Stage 3):
+# Adapted from: Assignment 3 Full Guidance, Step 9 (ConsoleApp while-loop menu mapping options
+# to workflow_service methods; input-driven navigation). Consistent with unit emphasis on a
+# proper menu structure rather than separate scripts.
+# How this project extends it: six options (includes viewing saved outputs); structured banner
+# and menu printers; try/except around actions; all pipeline behaviour delegated to
+# WorkflowService so training/EDA/predict stay in one place. See IMPLEMENTATION_SUMMARY.md.
 
 import os
 from pathlib import Path

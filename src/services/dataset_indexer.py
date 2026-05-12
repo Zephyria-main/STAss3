@@ -8,6 +8,14 @@
 # I wrote this class to handle all the file-scanning logic in one place.
 # The rest of the application just calls build_dataframe() and gets a
 # clean pandas DataFrame back — no file path logic leaks anywhere else.
+#
+# Unit tutorial / guidance — acknowledgement (Step 4: index the dataset):
+# Adapted from: Assignment 3 Full Guidance, Step 4 (DatasetIndexer: rglob, cv2.imread,
+# shape/channels, parent folder as label, pandas DataFrame).
+# How this project modifies / extends it: warnings on unreadable files; empty-index guard
+# with explicit columns; console progress summary; save_index() / load_index() CSV helpers
+# for faster repeat runs. Integrated into WorkflowService as the single source of the
+# training/EDA table. See IMPLEMENTATION_SUMMARY.md and CODE_SOURCES_AND_LICENSES.md.
 
 from pathlib import Path
 

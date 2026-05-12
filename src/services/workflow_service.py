@@ -9,6 +9,16 @@
 # Both the console app and the GUI app call this service instead of importing
 # the individual services directly. This means I only need to change one place
 # if the pipeline steps ever change.
+#
+# Unit tutorial / guidance — acknowledgement (Step 10: workflow coordinator + entry scripts):
+# Adapted from: Assignment 3 Full Guidance, Step 10 (WorkflowService: construct services,
+# load_dataframe cache, show_summary, generate_eda, train_model, predict_image,
+# run_full_pipeline-style orchestration).
+# How this project integrates it: cached DataFrame in load_dataframe(); generate_eda() calls
+# EDAService.run_all(); train_model() also saves report + confusion matrix; predict_image()
+# uses ClassifierService.predict() dict for GUI/console; ensures reports/ exists; guards empty
+# dataset. Same coordinator is shared by main.py, console_app, and app — no duplicated pipeline.
+# See IMPLEMENTATION_SUMMARY.md.
 
 from pathlib import Path
 

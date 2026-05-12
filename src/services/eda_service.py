@@ -8,6 +8,14 @@
 # I put all the chart-generation logic inside this class so Stage 1 is
 # completely self-contained. The WorkflowService just calls these methods
 # and the outputs land in the outputs/eda/ folder automatically.
+#
+# Unit tutorial / guidance — acknowledgement (Step 5: Stage 1 EDA):
+# Adapted from: Assignment 3 Full Guidance, Step 5 (EDAService: class distribution,
+# image size histograms, build_summary; same document’s sample_grid helper pattern).
+# How this project extends it: countplot styling, per-bar counts, KDE on size histograms;
+# flexible sample_grid rows/cols; extra charts (channel_distribution, aspect_ratio_scatter);
+# richer summary dict; save_summary_text(); run_all() to drive full Stage 1 from one call.
+# See IMPLEMENTATION_SUMMARY.md.
 
 from pathlib import Path
 

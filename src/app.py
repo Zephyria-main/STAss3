@@ -8,6 +8,15 @@
 # I built the Tkinter GUI as an alternative Stage 3 deployment option.
 # The design is intentionally simple so it is easy to explain during the
 # Week 13 presentation. Every button maps to one WorkflowService method.
+#
+# Unit tutorial / guidance — acknowledgement (Step 9: Stage 3 Tkinter deployment):
+# Adapted from: Assignment 3 Full Guidance, Step 9 (MacroApp example: title, labels,
+# filedialog.askopenfilename, PIL thumbnail + ImageTk.PhotoImage, predict via preprocessor +
+# joblib model, predict_proba confidence). Same patterns appear in Python tkinter/PIL docs
+# and unit practical examples.
+# How this project modifies / integrates: dark-themed layout, split panels, all stages
+# (summary, EDA, train) wired to WorkflowService; threading for long tasks; progress feedback
+# and log area; retention of image reference to avoid GC of PhotoImage. See IMPLEMENTATION_SUMMARY.md.
 
 import threading
 import tkinter as tk

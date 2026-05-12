@@ -8,6 +8,13 @@
 # I define the ImageRecord dataclass here to represent a single indexed image.
 # Using a dataclass gives me a clean, typed structure without writing boilerplate
 # __init__ and __repr__ methods manually.
+#
+# Unit tutorial / guidance — acknowledgement (Step 3: data model):
+# Based on: Assignment 3 Full Guidance, Step 3 (ImageRecord dataclass with file_path,
+# label, width, height, channels).
+# How this project integrates it: same field semantics; file_path kept as Path type for
+# type hints; used as the structured row concept alongside DatasetIndexer and pandas.
+# See IMPLEMENTATION_SUMMARY.md.
 
 from dataclasses import dataclass
 from pathlib import Path

@@ -9,6 +9,13 @@
 # ClassifierService never has to know anything about pixels, resizing, or
 # normalisation. Separating these concerns also makes it easy to swap in a
 # different preprocessing strategy without rewriting the training code.
+#
+# Unit tutorial / guidance — acknowledgement (Step 6: preprocessing for Stage 2):
+# Based on: Assignment 3 Full Guidance, Step 6 (ImagePreprocessor.transform: grayscale read,
+# resize, normalise to float, flatten).
+# How this project extends it: explicit ValueError if imread fails; default image_size from
+# config; transform_batch() for vectorised workflows with per-file skip logging.
+# Consumed only via ClassifierService in this design. See IMPLEMENTATION_SUMMARY.md.
 
 import cv2
 import numpy as np

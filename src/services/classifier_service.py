@@ -8,6 +8,15 @@
 # I put all model-related logic here so the interface and workflow layers
 # never need to import scikit-learn directly. If I ever swap the classifier
 # for a Keras model, only this file changes.
+#
+# Unit tutorial / guidance — acknowledgement (Steps 7–8: baseline classifier & saved reports):
+# Adapted from: Assignment 3 Full Guidance, Step 7 (ClassifierService: prepare_features loop,
+# RandomForestClassifier, train_test_split, metrics, joblib.dump) and Step 8 (save classification
+# report text; confusion matrix heatmap pattern). Aligned with weekly sklearn lab patterns.
+# How this project modifies / integrates: class_weight="balanced"; stratify=y; labels passed to
+# confusion_matrix; skipped rows on preprocess failure with logging; predict() returns label +
+# confidence for Stage 3; save_classification_report / save_confusion_matrix_plot write under
+# outputs/reports; dynamic heatmap size. See IMPLEMENTATION_SUMMARY.md.
 
 from pathlib import Path
 

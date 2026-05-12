@@ -12,6 +12,13 @@
 #   python main.py               — runs the full Stage 1 + Stage 2 pipeline
 #   python -m src.console_app   — launches the interactive console menu
 #   python -m src.app           — launches the Tkinter GUI
+#
+# Unit tutorial / guidance — acknowledgement (Step 10: batch entry script):
+# Based on: Assignment 3 Full Guidance, Step 10 (minimal main() constructing WorkflowService
+# and calling run_full_pipeline). Weekly lab materials use the same “thin entry point” idea.
+# How this project extends it: script lives at project root as main.py (not under src/) so
+# markers can run `python main.py` per submission layout; behaviour delegates entirely to
+# WorkflowService. See IMPLEMENTATION_SUMMARY.md.
 
 from src.services.workflow_service import WorkflowService
 
