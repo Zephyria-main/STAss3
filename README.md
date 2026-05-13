@@ -30,7 +30,7 @@ Installation
 
 ```bash
 # 1. Clone the repository
-git clone <your-repo-url>
+git clone <your-repo-url> **this repo**
 cd macro_project
 
 # 2. Create and activate a virtual environment
@@ -49,6 +49,8 @@ Dataset Setup
 1. Download the dataset from Kaggle: https://www.kaggle.com/datasets/kennethtm/stream-macroinvertebrates
 2. Extract the contents into data/raw/
 3. The expected structure is: data/raw/<ClassName>/<image>.jpg
+**this step is specified in case you want to change the dataset -> in which case, download a different dataset and put it in the same place. 
+Update the config file to match the new dataset. 
 
 ---
 
